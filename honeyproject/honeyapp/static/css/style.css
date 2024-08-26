@@ -1,0 +1,336 @@
+:root {
+    --primary: #f2b705; /* Honey gold */
+    --secondary: #d89c03; /* Deeper honey shade */
+    --light: #d7a841; /* Light honey tone */
+    --dark: #111111;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+.my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.bg-icon {
+    background: url(../img/bg-icon.png) center center repeat;
+    background-size: contain;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary,
+.btn.btn-outline-primary:hover,
+.btn.btn-outline-secondary:hover {
+    color: #fff30b;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Navbar ***/
+.fixed-top {
+    transition: .5s;
+}
+
+.top-bar {
+    height: 45px;
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    background-color: var(--primary); /* Honey color for the top bar */
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 25px 15px;
+    color: #555555;
+    font-weight: 500;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--secondary); /* Apply secondary honey color on hover/active */
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        margin-top: 10px;
+        border-top: 1px solid rgba(0, 0, 0, .07);
+        background: var(--primary); /* Apply honey color on mobile nav background */
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        transition: .5s;
+        opacity: 0;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+
+/*** Section Header ***/
+.section-header {
+    position: relative;
+    padding-top: 25px;
+}
+
+.section-header::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 2px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+}
+
+.section-header::after {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 2px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+}
+
+.section-header.text-start::before,
+.section-header.text-start::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.about-video {
+    position: relative;
+    overflow: hidden;
+}
+
+.rectangle-video {
+    width: 100%; /* Adjust this as needed */
+    height: 300px; /* Adjust this as needed */
+    object-fit: cover; /* Ensures the video covers the set dimensions */
+    border: 3px solid hsl(0, 0%, 97%); /* Honey color border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 
+        0 12px 24px #ffffff, /* Main shadow */
+        0 4px 8px rgb(255, 255, 255), /* Soft shadow */
+        0 0 20px rgb(255, 255, 255); /* White glow effect for the 3D look */
+    transform: translateY(4px); /* Slightly raised effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 
+        2px 2px 4px #fffffffa, /* Shadow for text-like effect */
+        -2px -2px 4px #ffffff; /* Light shadow for 3D effect */
+}
+
+.rectangle-video:hover {
+    transform: translateY(-4px); /* Lift effect on hover */
+    box-shadow: 
+        0 16px 32px #ffffff, /* More pronounced main shadow */
+        0 6px 12px #ffffff, /* Enhanced soft shadow */
+        0 0 30px rgba(255, 255, 255, 0.8); /* Stronger white glow on hover */
+}
+
+.honey-heading {
+    color: #d4a017; /* Example honey color */
+}
+
+
+.blog-img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blog-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+
+#contact form#contactForm .form-group {
+    margin-bottom: 30px;
+}
+
+#contact form#contactForm input[type=text], 
+#contact form#contactForm input[type=email], 
+#contact form#contactForm textarea {
+    min-height: 52px;
+    padding: 15px;
+    font-size: 16px;
+    color: hsl(59, 89%, 48%);
+    border-radius: 0.65rem;
+    border: 1px solid #efec80;
+    background: #ffffff; /* Ensure the background is white */
+    box-shadow: 0 8px 13px rgba(0, 0, 0, 0.1); /* Slight shadow */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+#contact form#contactForm .form-control:focus {
+    border-color: #d89c03; /* Honey color border on focus */
+    outline: none;
+    background: #efec80 ; /* Light green background when focused */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on focus */
+}
+
+#contact form#contactForm textarea {
+    resize: none;
+}
+
+/* Animation for the Image */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.animated-image {
+    animation: bounce 2s infinite;
+}
+
+/* Input Fields and Button Styling */
+.form-control:focus {
+    border-color: #d89c03 !important;
+    outline: none !important;
+    box-shadow: 0px 0px 10px 3px rgba(216, 156, 3, 0.5) !important;
+    background: #e5fff3 !important;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.btn-primary {
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+
+/* Bee Animation */
+.bee-container {
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+.bee {
+    width: 100%;
+    animation: fly 10s infinite ease-in-out;
+}
+
+@keyframes fly {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(300px, 50px) rotate(20deg); }
+    50% { transform: translate(600px, -30px) rotate(-10deg); }
+    75% { transform: translate(300px, 70px) rotate(15deg); }
+}
+
+/* Honey Waves */
+.honey-waves {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.waves {
+    width: 100%;
+    height: auto;
+    animation: moveWaves 10s infinite linear;
+}
+
+@keyframes moveWaves {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
